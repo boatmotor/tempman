@@ -6,12 +6,12 @@ use \LINE\LINEBot;
  
 require("phpMQTT.php");
  
-$mqtt = new phpMQTT("m24.cloudmqtt.com", 1883, "phpMQTT Pub Example"); //เปลี่ยน www.yourmqttserver.com ไปที่ mqtt server ที่เราสมัครไว้นะครับ
+$mqtt = new phpMQTT("www.m24.cloudmqtt.com", 1883, "phpMQTT Pub Example"); //เปลี่ยน www.yourmqttserver.com ไปที่ mqtt server ที่เราสมัครไว้นะครับ
  
 $token = "NRx+ZH4aSDHP/6Bv6ODrdoo1tiwkoJ0xoE+ef/X21LRkTLtPTmqqmfDlN8MfoPcNchiDjTzHScRU2cgtTd0Y0cCaoT3PKqipYvAfEvbq1vW2XkYKZH22pY+WayMVFpSmKn3S8g75FSycOEYnZECOdwdB04t89/1O/w1cDnyilFU="; //นำ token ที่มาจาก line developer account ของเรามาใส่ครับ
  
 $httpClient = new CurlHTTPClient($token);
-$bot = new LINEBot($httpClient, ['channelSecret' =&gt; $token]);
+$bot = new LINEBot($httpClient, ['9fe460c4068f06035400d7d73032cba9' =&gt; $token]);
 // webhook
 $jsonStr = file_get_contents('php://input');
 $jsonObj = json_decode($jsonStr);
