@@ -6,14 +6,12 @@
 $API_URL = 'https://api.line.me/v2/bot/message';
 $ACCESS_TOKEN = 'NRx+ZH4aSDHP/6Bv6ODrdoo1tiwkoJ0xoE+ef/X21LRkTLtPTmqqmfDlN8MfoPcNchiDjTzHScRU2cgtTd0Y0cCaoT3PKqipYvAfEvbq1vW2XkYKZH22pY+WayMVFpSmKn3S8g75FSycOEYnZECOdwdB04t89/1O/w1cDnyilFU='; 
 $channelSecret = '9fe460c4068f06035400d7d73032cba9';
-
-
 $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
-
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
+// line webhook ok
 
-
+$mqtt = new phpMQTT("www.m24.cloudmqtt.com", 1883, "phpMQTT Pub Example");
 
 if ( sizeof($request_array['events']) > 0 ) {
 
